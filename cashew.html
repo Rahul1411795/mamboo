@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashew Bliss</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h1, h2, h3 {
+        color: #5D4037; /* Dark Brown - Cashew Inspired */
+    }
+    p {
+        color: #555; /* Slightly Lighter Gray */
+    }
+
+    .product h3 {
+        color: #5D4037; /* Brown for Product Names */
+    }
+
+    .product p {
+        color: #777; /* Soft Gray for Descriptions */
+    }
+
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .logo {
+            width: 200px;
+            margin-right: 15px;
+            animation: bounce 1.5s infinite;
+        }
+
+        .hero {
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .products {
+            padding: 50px 20px;
+        }
+
+        .product-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: productFadeIn 1s ease-in-out;
+            max-width: 250px;
+        }
+
+        .product img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .product:hover {
+            transform: scale(1.1) rotate(3deg);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 26px;
+            margin: 0 15px;
+            transition: transform 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .social-links a img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .whatsapp-button { right: 20px; background-color: #25D366; }
+        .instagram-button { left: 20px; background-color: #E1306C; }
+        .floating-button:hover { transform: scale(1.1); }
+
+        .about {
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .description {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 30px;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    .description p {
+        font-size: 18px;
+        color: #444;
+        line-height: 1.6;
+        font-weight: 400;
+    }
+
+    .highlight {
+        font-weight: 600;
+        color: #5D4037;
+        font-size: 22px;
+    }
+
+    .benefits {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .benefit-item {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 15px 25px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #333;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .benefit-item:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+    </style>
+</head>
+<body>
+    <video autoplay loop muted class="video-bg">
+        <source src="cashew_video.mp4" type="video/mp4">
+    </video>
+
+    <header>
+        <img src="mamboo.png" alt="Cashew Bliss Logo" class="logo">
+        <h1>Welcome to Mamboo Cashews</h1>
+    </header>
+
+    <section class="hero">
+        <h2>Premium Flavored Cashews</h2>
+        <p>Experience the best quality and taste in every bite.</p>
+    </section>
+
+    <section class="description">
+        <p class="highlight">Mambooo Nuts – Premium Dry Fruits & Nuts</p>
+        <p>At <strong>Mambooo Nuts</strong>, we bring you the finest selection of high-quality dry fruits and nuts, packed with freshness and flavor. From crunchy cashews to wholesome almonds, our products are perfect for healthy snacking, gifting, and adding a nutritious twist to your recipes. Experience the richness of nature with <strong>every bite.</strong></p>
+    
+        <div class="benefits">
+            <div class="benefit-item">✅ Pure & Fresh</div>
+            <div class="benefit-item">✅ Finest Quality</div>
+            <div class="benefit-item">✅ Healthy & Delicious</div>
+            <div class="benefit-item">✅ Eco-Friendly Packaging</div>
+        </div>
+    
+    </section>
+
+    <section class="products">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="roasted and salted.jpeg" alt="Roasted and Salted Cashews">
+                <h3>Roasted and Salted Cashews</h3>
+                <p>Salty and crunchy, these cashews are a delicious treat.</p>
+            </div>
+            <div class="product">
+                <img src="raw_cashew.jpg" alt="Raw Cashews">
+                <h3>Raw Cashews</h3>
+                <p>Fresh, natural, and packed with nutrients. Perfect for snacking or cooking.</p>
+            </div>
+            <div class="product">
+                <img src="ghee_roasted.jpg" alt="Ghee Roasted Cashews">
+                <h3>Ghee Roasted Cashews</h3>
+                <p>Rich and aromatic, slow-roasted in pure ghee for a flavorful experience.</p>
+            </div>
+            <div class="product">
+                <img src="masala_cashew.jpg" alt="Masala Cashews">
+                <h3>Masala Cashews</h3>
+                <p>flavorful, these cashews are coated with a special blend of Indian spices.</p>
+            </div>
+            <div class="product">
+                <img src="roasted.jpg" alt="Pepper Cashews">
+                <h3>Pepper Cashews</h3>
+                <p>Spicy and flavorful, these cashews are coated with a special blend of spice.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3>Contact Us</h3>
+        <p>Follow us for updates & orders</p>
+        <div class="social-links">
+            <a href="https://wa.me/919930481887" target="_blank" class="floating-button whatsapp-button">
+                <img src="whatsapp.png" alt="WhatsApp">
+            </a>
+            <a href="https://instagram.com/mambooo.official" target="_blank" class="floating-button instagram-button">
+                <img src="instagram.png" alt="Instagram">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
