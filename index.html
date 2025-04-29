@@ -38,6 +38,7 @@
             to { opacity: 1; }
         }
 
+
         .video-bg {
             position: fixed;
             top: 0;
@@ -207,7 +208,7 @@
     </style>
 </head>
 <body>
-    <video autoplay loop muted class="video-bg">
+    <video autoplay muted loop playsinline id="bg-video" class="video-bg" poster="fallback.jpg">
         <source src="cashew_video.mp4" type="video/mp4">
     </video>
 
