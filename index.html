@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cashew Bliss</title>
+    <title>Mamboo</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -17,27 +17,27 @@
             text-align: center;
             animation: fadeIn 1.5s ease-in-out;
         }
+
         h1, h2, h3 {
-        color: #5D4037; /* Dark Brown - Cashew Inspired */
-    }
-    p {
-        color: #555; /* Slightly Lighter Gray */
-    }
+            color: #5D4037;
+        }
 
-    .product h3 {
-        color: #5D4037; /* Brown for Product Names */
-    }
+        p {
+            color: #555;
+        }
 
-    .product p {
-        color: #777; /* Soft Gray for Descriptions */
-    }
+        .product h3 {
+            color: #5D4037;
+        }
 
+        .product p {
+            color: #777;
+        }
 
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
 
         .video-bg {
             position: fixed;
@@ -159,61 +159,129 @@
             margin: 20px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
+
         .description {
-        background: rgba(255, 255, 255, 0.2);
-        padding: 30px;
-        margin: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .description p {
+            font-size: 18px;
+            color: #444;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #5D4037;
+            font-size: 22px;
+        }
+
+        .benefits {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
         text-align: center;
-        animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    .logo {
+        width: 150px;
+        margin-bottom: 10px;
+        animation: none; /* reduce animation for mobile */
+    }
+
+    .hero, .description, .about {
+        padding: 30px 15px;
+        margin: 10px;
     }
 
     .description p {
-        font-size: 18px;
-        color: #444;
-        line-height: 1.6;
-        font-weight: 400;
+        font-size: 16px;
     }
 
     .highlight {
-        font-weight: 600;
-        color: #5D4037;
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .benefits {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-top: 20px;
+        flex-direction: column;
+        gap: 10px;
     }
 
     .benefit-item {
-        background: rgba(255, 255, 255, 0.8);
-        padding: 15px 25px;
-        border-radius: 10px;
-        font-size: 16px;
-        font-weight: 500;
-        color: #333;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-size: 14px;
+        padding: 10px 15px;
     }
 
-    .benefit-item:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
     }
+
+    .product {
+        max-width: 90%;
+    }
+
+    .product img {
+        width: 100%;
+        height: auto;
+    }
+
+    footer h3 {
+        font-size: 18px;
+    }
+
+    .floating-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-links a img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
     </style>
 </head>
 <body>
-    <video autoplay muted loop playsinline id="bg-video" class="video-bg" poster="fallback.jpg">
+    <video autoplay muted loop playsinline class="video-bg" poster="fallback.jpg">
         <source src="cashew_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
     </video>
 
     <header>
-        <img src="mamboo.png" alt="Cashew Bliss Logo" class="logo">
+        <img src="mamboo.png" alt="Mamboo Cashews Logo" class="logo">
         <h1>Welcome to Mamboo Cashews</h1>
     </header>
 
@@ -225,14 +293,13 @@
     <section class="description">
         <p class="highlight">Mambooo Nuts – Premium Dry Fruits & Nuts</p>
         <p>At <strong>Mambooo Nuts</strong>, we bring you the finest selection of high-quality dry fruits and nuts, packed with freshness and flavor. From crunchy cashews to wholesome almonds, our products are perfect for healthy snacking, gifting, and adding a nutritious twist to your recipes. Experience the richness of nature with <strong>every bite.</strong></p>
-    
+
         <div class="benefits">
             <div class="benefit-item">✅ Pure & Fresh</div>
             <div class="benefit-item">✅ Finest Quality</div>
             <div class="benefit-item">✅ Healthy & Delicious</div>
             <div class="benefit-item">✅ Eco-Friendly Packaging</div>
         </div>
-    
     </section>
 
     <section class="products">
@@ -256,12 +323,12 @@
             <div class="product">
                 <img src="masala_cashew.jpg" alt="Masala Cashews">
                 <h3>Masala Cashews</h3>
-                <p>flavorful, these cashews are coated with a special blend of Indian spices.</p>
+                <p>Flavorful cashews coated with a special blend of Indian spices.</p>
             </div>
             <div class="product">
                 <img src="roasted.jpg" alt="Pepper Cashews">
                 <h3>Pepper Cashews</h3>
-                <p>Spicy and flavorful, these cashews are coated with a special blend of spice.</p>
+                <p>Spicy and bold, these cashews are coated with black pepper seasoning.</p>
             </div>
         </div>
     </section>
