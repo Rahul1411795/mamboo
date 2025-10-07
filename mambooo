@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mamboo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1, h2, h3 {
+      color: #5D4037;
+    }
+
+    p {
+      color: #555;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      position: relative;
+    }
+
+    .logo {
+      width: 200px;
+      margin-right: 15px;
+    }
+
+    /* --- Simple NM Traders text at top-right --- */
+    .brand-tag {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      color: #4E342E;
+      font-size: 15px;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+
+    .hero {
+      padding: 60px 20px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      margin: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .products {
+      padding: 50px 20px;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 20px;
+      padding-bottom: 10px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .product {
+      flex: 0 0 auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      max-width: 250px;
+      min-width: 250px;
+      scroll-snap-align: start;
+    }
+
+    .product img {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      text-decoration: none;
+    }
+
+    .whatsapp-button { right: 20px; background-color: #25D366; }
+    .instagram-button { left: 20px; background-color: #E1306C; }
+
+    .floating-button img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .description {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 30px;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .description p {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #5D4037;
+      font-size: 22px;
+    }
+
+    .benefits {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .benefit-item {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .benefit-item:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+
+      .logo {
+        width: 150px;
+        margin-bottom: 10px;
+      }
+
+      .brand-tag {
+        font-size: 13px;
+        top: 10px;
+        right: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="cashew_video.mp4" type="video/mp4" />
+  </video>
+
+  <header>
+    <img src="Mambooo.png" alt="Mambooo Cashews Logo" class="logo" />
+    <h1>Welcome to Mambooo Cashews</h1>
+    <div class="brand-tag">NM Traders</div>
+  </header>
+
+  <section class="hero">
+    <h2>Premium Flavored Cashews</h2>
+    <p>Experience the best quality and taste in every bite.</p>
+  </section>
+
+  <section class="description">
+    <p class="highlight">Mambooo Nuts – Premium Dry Fruits & Nuts</p>
+    <p>
+      At <strong>Mambooo Nuts</strong>, we bring you the finest selection of high-quality dry fruits and nuts, packed with freshness and flavor.
+      From crunchy cashews to wholesome almonds, our products are perfect for healthy snacking, gifting, and adding a nutritious twist to your recipes.
+      Experience the richness of nature with <strong>every bite.</strong>
+    </p>
+
+    <div class="benefits">
+      <div class="benefit-item">✅ Pure & Fresh</div>
+      <div class="benefit-item">✅ Finest Quality</div>
+      <div class="benefit-item">✅ Healthy & Delicious</div>
+      <div class="benefit-item">✅ Eco-Friendly Packaging</div>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="roasted and salted.jpeg" alt="Roasted and Salted Cashews" />
+        <h3>Roasted and Salted Cashews</h3>
+        <p>Salty and crunchy, these cashews are a delicious treat.</p>
+      </div>
+      <div class="product">
+        <img src="raw_cashew.jpg" alt="Raw Cashews" />
+        <h3>Raw Cashews</h3>
+        <p>Fresh, natural, and packed with nutrients. Perfect for snacking or cooking.</p>
+      </div>
+      <div class="product">
+        <img src="ghee_roasted.jpg" alt="Ghee Roasted Cashews" />
+        <h3>Ghee Roasted Cashews</h3>
+        <p>Rich and aromatic, slow-roasted in pure ghee for a flavorful experience.</p>
+      </div>
+      <div class="product">
+        <img src="masala_cashew.jpg" alt="Masala Cashews" />
+        <h3>Masala Cashews</h3>
+        <p>Flavorful cashews coated with a special blend of Indian spices.</p>
+      </div>
+      <div class="product">
+        <img src="roasted.jpg" alt="Pepper Cashews" />
+        <h3>Pepper Cashews</h3>
+        <p>Spicy and bold, these cashews are coated with black pepper seasoning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>We Also Have</h2>
+    <div class="product-grid" style="justify-content: center;">
+      <div class="product">
+        <img src="Almonds.jpeg" alt="Almonds" />
+        <h3>Premium Almonds</h3>
+        <p>Crunchy and nutritious almonds, perfect for a healthy lifestyle.</p>
+      </div>
+      <div class="product">
+        <img src="Raisins.jpeg" alt="Raisins" />
+        <h3>Raisins</h3>
+        <p>Delicious Raisins for natural sweetness and energy.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <h3>Contact Us</h3>
+    <p>Follow us for updates & orders</p>
+    
+    <a href="https://wa.me/918425011268" target="_blank" class="floating-button whatsapp-button">
+      <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"/>
+    </a>
+    <a href="https://www.instagram.com/mambooo.official" target="_blank" class="floating-button instagram-button">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"/>
+    </a>
+
+    <div style="margin-top: 40px; font-size: 14px; color: #444;">
+      <p><strong>Manufactured & Packaged by NM Traders</strong></p>
+      <p>Email: 
+        <a href="mailto:nm.traders225@gmail.com" style="color:#333; text-decoration: underline;">nm.traders225@gmail.com</a>, 
+        <a href="mailto:mambooonuts@gmail.com" style="color:#333; text-decoration: underline;">mambooonuts@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
