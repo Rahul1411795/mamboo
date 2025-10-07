@@ -1,405 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mamboo</title>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mamboo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            text-align: center;
-            animation: fadeIn 1.5s ease-in-out;
-        }
+    h1, h2, h3 {
+      color: #5D4037;
+    }
 
-        h1, h2, h3 {
-            color: #5D4037;
-        }
+    p {
+      color: #555;
+    }
 
-        p {
-            color: #555;
-        }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-        .product h3 {
-            color: #5D4037;
-        }
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
 
-        .product p {
-            color: #777;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .video-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            animation: fadeInUp 1.5s ease-in-out;
-        }
-
-        .logo {
-            width: 200px;
-            margin-right: 15px;
-            animation: bounce 1.5s infinite;
-        }
-
-        .hero {
-            padding: 60px 20px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            margin: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1.5s ease-in-out;
-        }
-
-        .products {
-            padding: 50px 20px;
-        }
-
-        .product-grid {
-    display: flex;
-    flex-wrap: nowrap; /* Prevents wrapping to next line */
-    overflow-x: auto;  /* Enables horizontal scroll */
-    gap: 20px;
-    padding-bottom: 10px;
-    -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
-}
-
-.product {
-    flex: 0 0 auto; /* Prevent shrinking, ensures fixed width */
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    animation: productFadeIn 1s ease-in-out;
-    max-width: 250px;
-    min-width: 250px;
-}
-
-
-        .product img {
-            width: 200px;
-            height: 200px;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-
-        .product:hover {
-            transform: scale(1.1) rotate(3deg);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        footer {
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
-            animation: fadeInUp 1.5s ease-in-out;
-        }
-
-        .social-links a {
-            color: #fff;
-            font-size: 26px;
-            margin: 0 15px;
-            transition: transform 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            animation: fadeInUp 1.5s ease-in-out;
-        }
-
-        .social-links a img {
-            width: 30px;
-            height: 30px;
-        }
-
-        .floating-button {
-            position: fixed;
-            bottom: 20px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            text-decoration: none;
-        }
-
-        .whatsapp-button { right: 20px; background-color: #25D366; }
-        .instagram-button { left: 20px; background-color: #E1306C; }
-        .floating-button:hover { transform: scale(1.1); }
-
-        .about {
-            padding: 50px 20px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            margin: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .description {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 30px;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            animation: fadeInUp 1.5s ease-in-out;
-        }
-
-        .description p {
-            font-size: 18px;
-            color: #444;
-            line-height: 1.6;
-            font-weight: 400;
-        }
-
-        .highlight {
-            font-weight: 600;
-            color: #5D4037;
-            font-size: 22px;
-        }
-
-        .benefits {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .benefit-item {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 15px 25px;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 500;
-            color: #333;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .benefit-item:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Responsive Adjustments */
-@media (max-width: 768px) {
     header {
-        flex-direction: column;
-        text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      position: relative;
     }
 
     .logo {
-        width: 150px;
-        margin-bottom: 10px;
-        animation: none; /* reduce animation for mobile */
+      width: 200px;
+      margin-right: 15px;
     }
 
-    .hero, .description, .about {
-        padding: 30px 15px;
-        margin: 10px;
+    /* --- Simple NM Traders text at top-right --- */
+    .brand-tag {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      color: #4E342E;
+      font-size: 15px;
+      font-weight: 500;
+      opacity: 0.8;
     }
 
-    .description p {
-        font-size: 16px;
+    .hero {
+      padding: 60px 20px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      margin: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
-    .highlight {
-        font-size: 20px;
+    .products {
+      padding: 50px 20px;
     }
 
-    .benefits {
-        flex-direction: column;
-        gap: 10px;
+    .product-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 20px;
+      padding-bottom: 10px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
     }
 
-    .benefit-item {
-        font-size: 14px;
-        padding: 10px 15px;
+    .product {
+      flex: 0 0 auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      max-width: 250px;
+      min-width: 250px;
+      scroll-snap-align: start;
     }
-    .product-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Automatically adjusts to two columns on small screens */
-    gap: 16px; /* Space between the product cards */
-}
 
-.product-card {
-    width: 100%; /* Make the card take the full width within the grid */
-    padding: 10px;
-    font-size: 14px;
-    margin: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #fff;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.product-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.product-card h3 {
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-.product-card .price {
-    font-size: 14px;
-    color: #e74c3c;
-}
-
-.product-card .description {
-    font-size: 12px;
-    color: #7f8c8d;
-}
-
-.product-card button {
-    font-size: 12px;
-    padding: 8px 12px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.product-card button:hover {
-    background-color: #2980b9;
-}
-
-@media (max-width: 768px) {
-    /* On screens smaller than 768px (like mobile devices), show 2 cards per row */
-    .product-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    .product img {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
     }
-}
 
-@media (max-width: 480px) {
-    /* For even smaller screens, you can adjust the layout if needed */
-    .product-container {
-        grid-template-columns: 1fr; /* Single column for very small screens */
+    .product:hover {
+      transform: scale(1.05);
     }
-}
-    footer h3 {
-        font-size: 18px;
+
+    footer {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .floating-button {
-        width: 50px;
-        height: 50px;
+      position: fixed;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      text-decoration: none;
     }
 
-    .social-links a img {
-        width: 24px;
-        height: 24px;
-    }
-}
+    .whatsapp-button { right: 20px; background-color: #25D366; }
+    .instagram-button { left: 20px; background-color: #E1306C; }
 
-    </style>
+    .floating-button img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .description {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 30px;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .description p {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #5D4037;
+      font-size: 22px;
+    }
+
+    .benefits {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .benefit-item {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .benefit-item:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+
+      .logo {
+        width: 150px;
+        margin-bottom: 10px;
+      }
+
+      .brand-tag {
+        font-size: 13px;
+        top: 10px;
+        right: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <video autoplay muted loop playsinline class="video-bg" poster="fallback.jpg">
-        <source src="cashew_video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="cashew_video.mp4" type="video/mp4" />
+  </video>
 
-    <header>
-        <img src="mamboo.png" alt="Mamboo Cashews Logo" class="logo">
-        <h1>Welcome to Mamboo Cashews</h1>
-    </header>
+  <header>
+    <img src="Mambooo.png" alt="Mambooo Cashews Logo" class="logo" />
+    <h1>Welcome to Mambooo Cashews</h1>
+    <div class="brand-tag">NM Traders</div>
+  </header>
 
-    <section class="hero">
-        <h2>Premium Flavored Cashews</h2>
-        <p>Experience the best quality and taste in every bite.</p>
-    </section>
+  <section class="hero">
+    <h2>Premium Flavored Cashews</h2>
+    <p>Experience the best quality and taste in every bite.</p>
+  </section>
 
-    <section class="description">
-        <p class="highlight">Mambooo Nuts – Premium Dry Fruits & Nuts</p>
-        <p>At <strong>Mambooo Nuts</strong>, we bring you the finest selection of high-quality dry fruits and nuts, packed with freshness and flavor. From crunchy cashews to wholesome almonds, our products are perfect for healthy snacking, gifting, and adding a nutritious twist to your recipes. Experience the richness of nature with <strong>every bite.</strong></p>
+  <section class="description">
+    <p class="highlight">Mambooo Nuts – Premium Dry Fruits & Nuts</p>
+    <p>
+      At <strong>Mambooo Nuts</strong>, we bring you the finest selection of high-quality dry fruits and nuts, packed with freshness and flavor.
+      From crunchy cashews to wholesome almonds, our products are perfect for healthy snacking, gifting, and adding a nutritious twist to your recipes.
+      Experience the richness of nature with <strong>every bite.</strong>
+    </p>
 
-        <div class="benefits">
-            <div class="benefit-item">✅ Pure & Fresh</div>
-            <div class="benefit-item">✅ Finest Quality</div>
-            <div class="benefit-item">✅ Healthy & Delicious</div>
-            <div class="benefit-item">✅ Eco-Friendly Packaging</div>
-        </div>
-    </section>
+    <div class="benefits">
+      <div class="benefit-item">✅ Pure & Fresh</div>
+      <div class="benefit-item">✅ Finest Quality</div>
+      <div class="benefit-item">✅ Healthy & Delicious</div>
+      <div class="benefit-item">✅ Eco-Friendly Packaging</div>
+    </div>
+  </section>
 
-    <section class="products">
-        <h2>Our Products</h2>
-        <div class="product-grid">
-            <div class="product">
-                <img src="roasted and salted.jpeg" alt="Roasted and Salted Cashews">
-                <h3>Roasted and Salted Cashews</h3>
-                <p>Salty and crunchy, these cashews are a delicious treat.</p>
-            </div>
-            <div class="product">
-                <img src="raw_cashew.jpg" alt="Raw Cashews">
-                <h3>Raw Cashews</h3>
-                <p>Fresh, natural, and packed with nutrients. Perfect for snacking or cooking.</p>
-            </div>
-            <div class="product">
-                <img src="ghee_roasted.jpg" alt="Ghee Roasted Cashews">
-                <h3>Ghee Roasted Cashews</h3>
-                <p>Rich and aromatic, slow-roasted in pure ghee for a flavorful experience.</p>
-            </div>
-            <div class="product">
-                <img src="masala_cashew.jpg" alt="Masala Cashews">
-                <h3>Masala Cashews</h3>
-                <p>Flavorful cashews coated with a special blend of Indian spices.</p>
-            </div>
-            <div class="product">
-                <img src="roasted.jpg" alt="Pepper Cashews">
-                <h3>Pepper Cashews</h3>
-                <p>Spicy and bold, these cashews are coated with black pepper seasoning.</p>
-            </div>
-        </div>
-    </section>
+  <section class="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="roasted and salted.jpeg" alt="Roasted and Salted Cashews" />
+        <h3>Roasted and Salted Cashews</h3>
+        <p>Salty and crunchy, these cashews are a delicious treat.</p>
+      </div>
+      <div class="product">
+        <img src="raw_cashew.jpg" alt="Raw Cashews" />
+        <h3>Raw Cashews</h3>
+        <p>Fresh, natural, and packed with nutrients. Perfect for snacking or cooking.</p>
+      </div>
+      <div class="product">
+        <img src="ghee_roasted.jpg" alt="Ghee Roasted Cashews" />
+        <h3>Ghee Roasted Cashews</h3>
+        <p>Rich and aromatic, slow-roasted in pure ghee for a flavorful experience.</p>
+      </div>
+      <div class="product">
+        <img src="masala_cashew.jpg" alt="Masala Cashews" />
+        <h3>Masala Cashews</h3>
+        <p>Flavorful cashews coated with a special blend of Indian spices.</p>
+      </div>
+      <div class="product">
+        <img src="roasted.jpg" alt="Pepper Cashews" />
+        <h3>Pepper Cashews</h3>
+        <p>Spicy and bold, these cashews are coated with black pepper seasoning.</p>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <h3>Contact Us</h3>
-        <p>Follow us for updates & orders</p>
-        <div class="social-links">
-            <a href="https://wa.me/919930481887" target="_blank" class="floating-button whatsapp-button">
-                <img src="whatsapp.png" alt="WhatsApp">
-            </a>
-            <a href="https://instagram.com/mambooo.official" target="_blank" class="floating-button instagram-button">
-                <img src="instagram.png" alt="Instagram">
-            </a>
-        </div>
-    </footer>
+  <section class="products">
+    <h2>We Also Have</h2>
+    <div class="product-grid" style="justify-content: center;">
+      <div class="product">
+        <img src="Almonds.jpeg" alt="Almonds" />
+        <h3>Premium Almonds</h3>
+        <p>Crunchy and nutritious almonds, perfect for a healthy lifestyle.</p>
+      </div>
+      <div class="product">
+        <img src="Raisins.jpeg" alt="Raisins" />
+        <h3>Raisins</h3>
+        <p>Delicious Raisins for natural sweetness and energy.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <h3>Contact Us</h3>
+    <p>Follow us for updates & orders</p>
+    
+    <a href="https://wa.me/918425011268" target="_blank" class="floating-button whatsapp-button">
+      <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"/>
+    </a>
+    <a href="https://www.instagram.com/mambooo.official" target="_blank" class="floating-button instagram-button">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"/>
+    </a>
+
+    <div style="margin-top: 40px; font-size: 14px; color: #444;">
+      <p><strong>Manufactured & Packaged by NM Traders</strong></p>
+      <p>Email: 
+        <a href="mailto:nm.traders225@gmail.com" style="color:#333; text-decoration: underline;">nm.traders225@gmail.com</a>, 
+        <a href="mailto:mambooonuts@gmail.com" style="color:#333; text-decoration: underline;">mambooonuts@gmail.com</a>
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
